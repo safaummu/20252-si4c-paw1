@@ -1,0 +1,13 @@
+/* elemnt selector */
+/* referemsi web colorhunt.co */
+body {
+    background-color: #FFF2D0 ;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.txt-center { text-align: center; }
+.bg-warning { background-color: rgb(218, 223, 195); border-radius: 20px;}
+.txt-black { color: black; }
+.p-1 { padding: 50px; } /* memberik jarak sisi dalam border*/
+.m-1 { margin: 20px; } /* memberi jarak sisi luar border*/
