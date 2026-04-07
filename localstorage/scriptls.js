@@ -1,9 +1,11 @@
 let npm = document.getElementById('npm');
 let nama = document.getElementById('nama');
+let imageUrl = document.getElementById('imageUrl');
 
 function simpan() {
     console.log(npm.value);
     console.log(nama.value);
+    console.log(imageUrl.value);
 
     // localStorage.setItem('npm', npm.value);
     // localStorage.setItem('nama', nama.value);
@@ -21,7 +23,8 @@ function simpan() {
     //simpan valeu npm dan nama ke dalam object
     data.push({
         npm: npm.value,
-        nama: nama.value
+        nama: nama.value,
+        imageUrl: imageUrl.value
     });
     console.log(data);
 
@@ -43,7 +46,10 @@ function tampil() {
     //lakukan perulangan untuk menampilkan data mahasiswa (forEach)
     hasil.forEach((element) => {
         //console.log(element);
-        document.getElementById('list-mhs').innerHTML += `<li>${element.npm} ${element.nama}</li>`;
+       // document.getElementById('list-mhs').innerHTML += `<div class="col-lg-4 col-md-6"> <h4 class="text-primary">${element.nama}</h4> <h6 class="text-danger">${element.npm}</h6></div>`;
+        // Tambahkan kondisi untuk menampilkan gambar hanya jika imageUrl ada
+        let imgTag = element.imageUrl ? `<img src="${element.imageUrl}" alt="Gambar Mahasiswa" style="width:100px; height:auto;" onerror="this.style.display='none';">` : '';
+        document.getElementById('list-mhs').innerHTML += `<div class="col-lg-4 col-md-6"> <h4 class="text-primary">${element.nama}</h4> <h6 class="text-danger">${element.npm}</h6> ${imgTag}</div>`;
     });
 }
 
